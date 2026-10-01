@@ -1,15 +1,6 @@
-// scrMasksINIT - PATCHED: +Cheshire mask slot 29
-if (global.masks[27] == 1)
-{
-    masks = 29;
-}
-else
-{
-    masks = 28;
-}
-
-// --- CHESHIRE: extend masks count to include slot 29 ---
-masks = 30;
+// scrMasksINIT — расширенный список слотов Cheshire.
+// 0..29 — именованные маски/скины, 30 — Random.
+masks = 31;
 
 name[0] = "Richard";
 name[1] = "Rasmus";
@@ -39,14 +30,17 @@ name[24] = "Jake";
 name[25] = "Richter";
 name[26] = "Russell";
 name[27] = "Igel";
+name[28] = "Tony Unlocked";
 name[29] = "Cheshire";
-name[masks - 1] = "Random";
+name[30] = "Random";
+
 i = 0;
 repeat (clamp(masks - 1, 0, masks))
 {
     MaxSkin[i] = 0;
     i += 1;
 }
+
 MaxSkin[0] = 1;
 MaxSkin[4] = 1;
 MaxSkin[8] = 1;
@@ -65,11 +59,16 @@ MaxSkin[25] = 1;
 MaxSkin[26] = 1;
 MaxSkin[29] = 1;
 MaxSkin[masks - 1] = 1;
+
 i = 0;
 ini_open("options.ini");
 repeat (clamp(masks - 1, 0, masks))
 {
-    global.selectskin[i] = ini_read_real("Skin" + string_repeat("Hard", global.hardmode), name[i], global.hardmode && !MaxSkin[i]);
+    global.selectskin[i] = ini_read_real(
+        "Skin" + string_repeat("Hard", global.hardmode),
+        name[i],
+        global.hardmode && !MaxSkin[i]
+    );
     i += 1;
 }
 ini_close();
