@@ -1,0 +1,12 @@
+{
+  "id": "mask_cheshire",
+  "display_name": "Cheshire",
+  "mask_index": 29,
+  "swap_cooldown_max": 1140,
+  "bullet_time_factor": 0.1,
+  "phase_duration": 84,
+  "phase_speed_boost": 1.6,
+  "break_triggers": ["melee", "shoot", "pickup", "throw", "collision"],
+  "phase_cancel_triggers": ["shoot", "throw"],
+  "phase_kill_triggers": ["melee_kill", "ground_finisher"]
+}

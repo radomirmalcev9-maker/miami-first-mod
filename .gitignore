@@ -1,0 +1,7 @@
+# The compiled GameMaker data file is a large, local game asset.
+/data.win
+/data.win.bak
+/data/win
+/data/win/
+/*.patched.win
+/mod_cheshire/build/
